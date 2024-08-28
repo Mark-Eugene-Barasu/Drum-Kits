@@ -48,7 +48,7 @@ function makeSound(key){
             break;
     
         default:
-            console.log(`Please re-check your code.`);
+            console.log(`another key was pressed`);
             break;
     }
 }
