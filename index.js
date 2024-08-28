@@ -4,11 +4,11 @@ for(let i = 0; i < document.querySelectorAll(`.drum`).length; i++) {
     document.querySelectorAll(`.drum`)[i].addEventListener(`click`, function(){
         // alert(`I got clicked`);
         debugger
-        
+
         let buttonInnerHTML = this.innerHTML;
         
         makeSound(buttonInnerHTML);
-        
+        buttonAnimation(buttonInnerHTML);
     });
 }
 
@@ -17,6 +17,8 @@ document.addEventListener(`keypress`, function(event) {
     
     debugger;
     makeSound(event.key);
+    buttonAnimation(event.key);
+
 });
 
 function makeSound(key){
@@ -55,4 +57,21 @@ function makeSound(key){
             console.log(`another key was pressed`);
             break;
     }
+}
+
+
+// button animation 
+
+function buttonAnimation(currentKey){
+
+    let activeButton = document.querySelector(`.${currentKey}`);
+    // activating the CSS style applied to the class
+    activeButton.classList.add("pressed")
+
+
+    // setting timeout to remove that CSS style applied to the class
+    setTimeout(() => {
+       activeButton.classList.remove("pressed"); 
+    }, 100);
+
 }
