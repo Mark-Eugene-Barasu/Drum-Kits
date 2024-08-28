@@ -1,9 +1,12 @@
 for(let i = 0; i < document.querySelectorAll(`.drum`).length; i++) {
     
+    
     document.querySelectorAll(`.drum`)[i].addEventListener(`click`, function(){
         // alert(`I got clicked`);
+        debugger
+        
         let buttonInnerHTML = this.innerHTML;
-    
+        
         makeSound(buttonInnerHTML);
         
     });
@@ -12,6 +15,7 @@ for(let i = 0; i < document.querySelectorAll(`.drum`).length; i++) {
 // detecting keypress
 document.addEventListener(`keypress`, function(event) {
     
+    debugger;
     makeSound(event.key);
 });
 
